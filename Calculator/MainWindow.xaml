@@ -1,0 +1,71 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Background="DarkGray"
+        FontFamily="Arial"
+        FontWeight="Bold"
+        Title="Számológép" MinHeight="450" Height="450" MinWidth="800" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="Background" Value="DarkGray"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="38"></Setter>
+            <Setter Property="TextAlignment" Value="Right"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Column="0" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Margin="140,0,10,0" IsReadOnly="False" x:Name="TB" FontWeight="Normal"/>
+        <Label Grid.Column="1" Content="Előzmények" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="Elozmenyek" SelectionChanged="ElozmenySelect" Background="DarkGray" FontSize="15"></ListBox>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Content="7" Tag="7" Click="Click"></Button>
+            <Button Grid.Column="1" Content="8" Tag="8" Click="Click"></Button>
+            <Button Grid.Column="2" Content="9" Tag="9" Click="Click"></Button>
+            <Button Grid.Column="3" Content="/" Tag="/" Click="Click"></Button>
+            <Button Grid.Row="1" Grid.Column="0" Content="4" Tag="4" Click="Click"></Button>
+            <Button Grid.Row="1" Grid.Column="1" Content="5" Tag="5" Click="Click"></Button>
+            <Button Grid.Row="1" Grid.Column="2" Content="6" Tag="6" Click="Click"></Button>
+            <Button Grid.Row="1" Grid.Column="3" Content="X" Tag="*" Click="Click"></Button>
+            <Button Grid.Row="2" Grid.Column="0" Content="1" Tag="1" Click="Click"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Content="2" Tag="2" Click="Click"></Button>
+            <Button Grid.Row="2" Grid.Column="2" Content="3" Tag="3" Click="Click"></Button>
+            <Button Grid.Row="2" Grid.Column="3" Content="-" Tag="-" Click="Click"></Button>
+            <Button Grid.Row="3" Grid.Column="0" Content="0" Tag="0" Click="Click"></Button>
+            <Button Grid.Row="3" Grid.Column="1" Content="." Tag="." Click="Click"></Button>
+            <Button Grid.Row="3" Grid.Column="2" Content="=" Tag="=" Click="Eredmeny"></Button>
+            <Button Grid.Row="3" Grid.Column="3" Content="+" Tag="+" Click="Click"></Button>
+        </Grid>
+        <Button Content="X" HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Width="50" Foreground="Red" Height="50" Click="Torol"/>
+        <Button Content="←" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Backspace"/>
+
+    </Grid>
+</Window>
