@@ -32,7 +32,7 @@ namespace Calculator
         private void Click(object sender, RoutedEventArgs e)
         {
             var tag = ((Button)sender).Tag;
-            if (TextBoxeredmeny != null)
+            if (TextBoxeredmeny != null && TextBoxeredmeny.Length > 0)
             {
                 if (muveleteksorrend.Contains(TextBoxeredmeny[TextBoxeredmeny.Length - 1].ToString()))
                 {
@@ -104,7 +104,7 @@ namespace Calculator
 
         private void Backspace(object sender, RoutedEventArgs e)
         {
-            if(TextBoxeredmeny != null)
+            if(TextBoxeredmeny != null && TextBoxeredmeny.Length > 0)
                TextBoxeredmeny = TextBoxeredmeny.Remove(TextBoxeredmeny.Length - 1, 1);
             TB.Text = TextBoxeredmeny;
         }
